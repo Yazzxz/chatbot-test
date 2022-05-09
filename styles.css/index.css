@@ -1,0 +1,147 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #191538;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+section{
+    padding: 0%;
+}
+
+.navegacion{
+    display: flex;
+    background-color: wheat;
+}
+.navegacion > .titulo{
+    margin-left: 50px;
+}
+
+.navegacion > .links a + a{
+    margin-left: 50px;
+}
+.principal{
+    font-size: 100px;
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    height: 60vh;
+}
+.principal > h1{
+    margin-top: 0px;
+}
+.productos > h1{
+    margin-top: 0px;
+    color: #66ffb8;
+}
+.chatbot > h1{
+    margin-top: 0px;
+}
+.productos{
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Space Mono', monospace;
+    font-size: 30px;
+    background-color: #ffffff;
+    height: 60vh;
+}
+
+.chatbot{
+    background-color: #000000;
+    text-align: center;
+    height: 760px;
+}
+
+.contenedor{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+
+.chat{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border-radius: 16px 0px 16px 16px;
+    margin-right: 50px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+
+
+.mensajePropio {    
+    clear: both;
+    align-self: flex-end;
+    float:right;
+    border-radius: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: aquamarine;
+    height: auto;
+    white-space: normal;
+    max-width: 85%;
+}
+
+.mensajeOtro {
+    clear: both;
+    float:left;
+    border-radius: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: rgb(255, 144, 255);
+    width: fit-content;
+    max-width: 85%;
+}
+
+.mensajeOtro > p + p{
+    margin-top: -15px;
+}
+.mensajes{
+    height: 600px;
+    width: 400px;
+    overflow-y: scroll;
+}
+
+.mensajes::-webkit-scrollbar {
+    width: 8px;               
+  }
+.mensajes::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0);        
+}
+.mensajes::-webkit-scrollbar-thumb {
+
+    background-color: rgba(0, 0, 0, 0.5);    
+    border-radius: 20px;       
+    
+  }
+  
+.escritor{
+    border-radius: 16px;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 316.8px;
+    height: 30px;
+    border-style: none;
+}
+.enviar{
+    padding: 0;
+    margin: 0;
+    width: 64px;
+    border-style: none;
+    height: 30px;
+    border-radius: 16px;
+
+}
+
+.escrib{
+    background-color: cornflowerblue;
+    height: 60px;
+    border-radius: 0px 0px 16px 16px;
+}

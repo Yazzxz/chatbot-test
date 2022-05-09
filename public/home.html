@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../styles.css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:ital,wght@1,300&family=Roboto+Mono:wght@200&family=Space+Mono&display=swap" rel="stylesheet">
+    <script src="../scripts/similitud.js"></script>
+    <script src="../scripts/respuestas.js"></script>
+</head>
+<body>
+
+    <nav class="navegacion">
+        <div class="titulo">
+            <h1>Tienda de Descartables</h1>
+        </div>
+        <div class="links">
+            <a href="#principal">Principal</a>
+            <a href="#productos">Productos</a>
+            <a href="#chatbot">ChatBot</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="principal" id="principal">
+            <h1 id="textoPrincipal">Encontra Lo Que Queres</h1>
+        </div>
+        
+        <div class="productos" id="productos">
+            <h1>Nuestros Productos:</h1>
+        </div>
+    </div>
+
+    <div class="chatbot" id="chatbot">
+        <h1>ChatBot</h1>
+        <button id="aveces"> Si</button>
+        <div id="si" class="contenedor">
+            <div class="chat">
+                <div class="mensajes">
+                    <div class="mensajeOtro">
+                        <p>Hola!!😀</p>
+                        <p>¿En que te puedo ayudar?</p>
+                        <p>Horarios👈</p>
+                        <p>Ubicacion👈</p>
+                        <p>Ver Stock👈</p>
+                        <p>Metodos de Pago👈</p>
+                    </div>
+                </div>
+                <div class="escrib">
+                    <input type="text" class="escritor" id="mensaje" placeholder="Escribir...">
+                    <button class="enviar" onclick="mandarMensaje()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/index.js"></script>
+</body>
+</html>
