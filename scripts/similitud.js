@@ -37,3 +37,28 @@ function editDistance(s1, s2) {
     }
     return costs[s2.length];
   }
+
+
+
+
+  function separarFrase(a, palabra){
+    let arr = new Array
+    let palabraActual = ""
+    for (let i = 0; i < a.length; i++){
+        palabraActual += a[i]
+        if(a[i] == " " || i == a.length - 1){
+            arr.push(palabraActual)
+            console.log(palabraActual)
+            palabraActual = ""
+            
+        }
+    }
+    for (let x = 0; x < arr.length; x++){
+        if(similitud(arr[x], palabra) > 0.5){
+            return true
+            break
+        }
+    }
+}
+
+//console.log(separarFrase("Como estas?, hola", "estas"))

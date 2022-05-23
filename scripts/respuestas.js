@@ -15,35 +15,25 @@ function mandarMensaje(){
         a.classList.add("mensajePropio")
         lugar.appendChild(a)
         document.getElementById("mensaje").value = ""
-        setTimeout(comparacion, 1000, a)
+        setTimeout(respuesta, 1000, a)
     }
 }
-let res
-let saludos = (/buenas/, /hola/);   
-let hoarios = (/horarios/, /horario/)
-function comparacion(a){
-    let cadena = a.innerText
-    if(saludos.test(cadena) == true)res = 1
-    if(hoarios.test(cadena) == true)res = 2
-    si()
-}
 
-s = "hola mundo", l = /mundo/
-console.log(l.test(s))
 
+//console.log(separarFrase("Como estas?, buenos dias", "buenos"))
 
 function respuesta(a){
     let x = a.innerText
     x = x.toLowerCase()
     console.log("x es " + x)
     
-    if(x.includes("hola") || x.includes("buenas")){
+    if(separarFrase(x, "hola") == true){
         respuestas("Hola!! :)")
     }
-    else if(x.includes("horario") || x.includes("horarios")){
+    else if(separarFrase(x, "horarios") == true){
         respuestas("El local esta abierto de 8:00 a 12:00 hs y de 16:00 hasta 20:00 hs")
     }
-    else if(x.includes("stock") || x.includes("stocks")){
+    else if(separarFrase(x, "stock") == true){
         respuestas("Puedes ver el stock disponible en:...")
     }
     else{
@@ -51,17 +41,3 @@ function respuesta(a){
     }}
 
 
-function si(){
-    switch (res) {
-        case 1:
-            console.log("hola")
-            break;
-
-        case 2:
-            console.log("horarios")
-            break;
-        default:
-            console.log("que")
-            break;
-    }
-}
