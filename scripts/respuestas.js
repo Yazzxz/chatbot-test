@@ -22,19 +22,36 @@ function mandarMensaje(){
 
 //console.log(separarFrase("Como estas?, buenos dias", "buenos"))
 
+
 function respuesta(a){
     let x = a.innerText
     x = x.toLowerCase()
     console.log("x es " + x)
-    
-    if(separarFrase(x, "hola") == true){
+    console.log("aveces con " + prioridades(x))
+
+    if(separarFrase(x, "hola") == true && prioridades(x) == 0){
         respuestas("Hola!! :)")
     }
     else if(separarFrase(x, "horarios") == true){
         respuestas("El local esta abierto de 8:00 a 12:00 hs y de 16:00 hasta 20:00 hs")
     }
-    else if(separarFrase(x, "stock") == true){
-        respuestas("Puedes ver el stock disponible en:...")
+
+    else if(separarFrase(x, "stock") == true || separarFrase(x, "producto") == true || separarFrase(x, "descartable") == true) {
+        
+        if(separarFrase(x, "tipo")){
+            respuestas("Tenemos a la venta descartables de plastico y carton")
+        }
+        else{
+            respuestas("Puedes ver el stock disponible en:...")
+        }
+    }
+
+    else if(separarFrase(x, "pago") == true){
+        respuestas("El pago es unicamente en efectivo en el local")
+    }
+
+    else if(separarFrase(x, "ubicacion") == true || separarFrase(x, "ubicado") == true){
+        respuestas("La ubicacion de la tienda es en ...")
     }
     else{
         respuestas("Disculpa, no eh podido entender tu consulta :(")
