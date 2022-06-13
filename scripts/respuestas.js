@@ -5,6 +5,22 @@ function respuestas(mensaje){
     e.classList.add("mensajeOtro")
     lugar.append(e)
 }
+
+function respuestasLink(mensajeLink, link, mensaje){
+    console.log("aaaaaaaaaaa" + mensaje)
+    if(mensaje != undefined){
+        let a = document.createElement('div')
+        a.innerText = mensaje
+        a.classList.add("mensajeOtro")
+        lugar.append(a)
+    }
+    let e = document.createElement('a')
+    e.innerText = mensajeLink
+    e.classList.add("linkOtro")
+    e.setAttribute('href',link);
+    lugar.append(e)
+}
+
 //Funcion anexada al boton del escritor del chat que envia el mensaje escrito
 function mandarMensaje(){
     if(document.getElementById("mensaje").value != 0){
@@ -28,7 +44,6 @@ function respuesta(a){
     x = x.toLowerCase()
     console.log("x es " + x)
     console.log("aveces con " + prioridades(x))
-
     if(separarFrase(x, "hola") == true && prioridades(x) == 0){
         respuestas("Hola!! :)")
     }
@@ -42,17 +57,31 @@ function respuesta(a){
             respuestas("Tenemos a la venta descartables de plastico y carton")
         }
         else{
-            respuestas("Puedes ver el stock disponible en:...")
+            respuestasLink("Descartables Zair", './productos.html', "Puedes ver el stock disponible en el siguiente link")
         }
     }
 
-    else if(separarFrase(x, "pago") == true){
+    else if(separarFrase(x, "pago") == true || separarFrase(x, "pagar") == true || separarFrase(x, "abonar") == true){
         respuestas("El pago es unicamente en efectivo en el local")
     }
 
     else if(separarFrase(x, "ubicacion") == true || separarFrase(x, "ubicado") == true){
         respuestas("La ubicacion de la tienda es en ...")
     }
+
+    else if(separarFrase(x, "cumpleaños")[0] == true) {
+        console.log(separarFrase(x, "cumpleaños"))
+        console.log("holaaaaaaa")
+        if (isNaN(separarFrase(x, "cumpleaños")[1])  == false){
+            respuesta("En total serian unos")
+            respuesta(separarFrase(x, "cumpleaños")[1] * 350)
+        }
+        else{
+            respuestasLink("Kit Cumpleaños", "http://google.com", "Para tu cumpleaños puedes comprar el siguiente kit a un valor inicial de 350$:")
+        }
+    }
+    
+    
     else{
         respuestas("Disculpa, no eh podido entender tu consulta :(")
     }}

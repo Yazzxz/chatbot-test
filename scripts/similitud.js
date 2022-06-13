@@ -42,6 +42,18 @@ function editDistance(s1, s2) {
 
 
   function separarFrase(a, palabra){
+    if(palabra.length <= 5){
+      limite = 0.75
+    }
+    else if(palabra.length <= 2){
+      limite == 1
+    }
+    else{
+        limite = 0.5
+    
+    }
+
+    let c = 0
     let arr = new Array
     let palabraActual = ""
     for (let i = 0; i < a.length; i++){
@@ -52,11 +64,18 @@ function editDistance(s1, s2) {
             palabraActual = ""
             
         }
+        if (isNaN(a[i]) == false) c = i
     }
     for (let x = 0; x < arr.length; x++){
-        if(similitud(arr[x], palabra) > 0.5){
+        if(similitud(arr[x], palabra) > limite){
+          if(c > 0){
+            return [true, c]
+            break
+          }
+          else{
             return true
             break
+          } 
         }
     }
 }

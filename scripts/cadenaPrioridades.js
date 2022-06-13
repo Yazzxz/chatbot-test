@@ -1,4 +1,4 @@
-let peticiones = ["horarios", "stock", "pago"]
+let peticiones = ["horarios", "stock", "pago", "ubicacion", ]
 function prioridades(x){
     var a = 0
     var b 
